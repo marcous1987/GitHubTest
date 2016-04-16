@@ -5,9 +5,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.example.marcous.githubtest.utils.TextUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        updateText();
+    }
+
+    private void updateText() {
+        TextUtils textUtils=new TextUtils();
+        ((TextView)findViewById(R.id.tv_msg)).setText(textUtils.getValue());
+        for (int i=0;i<10;i++){
+            Log.d("MainActivity","i="+i);
+        }
     }
 
     @Override
